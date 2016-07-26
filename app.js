@@ -11,14 +11,14 @@ io.on('connection', function(socket) {
 socket.on('add', function(stockToAdd) {
   console.log("stockToAdd" + stockToAdd);
 stocks.push(stockToAdd);
-socket.emit("stockUpdate", stocks);
+io.sockets.emit("stockUpdate", stocks);
   //io.emit('names', msg);
 });
 socket.on('remove', function(stockToRemove) {
   console.log("stockToRemove" + stockToRemove);
 var toBeCut = stocks.indexOf(stockToRemove);
 stocks.splice(toBeCut,1);
-socket.emit("stockUpdate", stocks);
+io.sockets.emit("stockUpdate", stocks);
   //io.emit('names', msg);
 });
 });
