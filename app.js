@@ -23,6 +23,6 @@ socket.emit("stockUpdate", stocks);
 });
 });
 
-http.listen((process.env.port || 8888), function(){
-  console.log('listening on *:' + (process.env.port || 8888));
+http.listen((process.env.PORT), function(){
+  console.log('listening on *:' + (process.env.PORT));
 });
